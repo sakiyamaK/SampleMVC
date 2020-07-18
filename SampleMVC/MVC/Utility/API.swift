@@ -10,14 +10,19 @@
 import Foundation
 
 final class API {
+  //シングルトンパターンの書き方
   static let shared = API()
   private init() { }
 
+  //userデータを取得するAPI
   func getUsers(completion: (([MVCUserModel]) -> Void)? = nil) {
-    //仮想API通信 0.4秒かかる通信みたいな感じ
+    //仮想API通信
+    //本来はサーバーから取得する
+    //ここではサンプルとしてsampeDataを0.4sec後に受け取っている
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
       guard
         let data = API.sampleData.data(using: .utf8),
+        //Codable(Decodable)に準拠したモデルはjson文字列から自動で変わる
         let users = try? JSONDecoder().decode([MVCUserModel].self, from: data)
         else {
           completion?([])
