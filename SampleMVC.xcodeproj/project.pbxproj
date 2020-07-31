@@ -23,6 +23,11 @@
 		B620AF7124C321B8003A4B1C /* MVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620AF7024C321B8003A4B1C /* MVCTableViewCell.swift */; };
 		B620AF7424C321C8003A4B1C /* MVCUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620AF7324C321C8003A4B1C /* MVCUserModel.swift */; };
 		B6DC0E3224C32312004243CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC0E3124C32312004243CC /* API.swift */; };
+		B6DFADFE24D452BC00071D25 /* MVCCountoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFADFD24D452BC00071D25 /* MVCCountoryModel.swift */; };
+		B6DFAE0124D452F000071D25 /* MVCCountry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6DFAE0024D452F000071D25 /* MVCCountry.storyboard */; };
+		B6DFAE0324D452FC00071D25 /* MVCCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFAE0224D452FC00071D25 /* MVCCountryViewController.swift */; };
+		B6DFAE0624D4545A00071D25 /* MVCCountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DFAE0524D4545A00071D25 /* MVCCountryTableViewCell.xib */; };
+		B6DFAE0824D4547100071D25 /* MVCCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFAE0724D4547100071D25 /* MVCCountryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		B620AF7024C321B8003A4B1C /* MVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTableViewCell.swift; sourceTree = "<group>"; };
 		B620AF7324C321C8003A4B1C /* MVCUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUserModel.swift; sourceTree = "<group>"; };
 		B6DC0E3124C32312004243CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B6DFADFD24D452BC00071D25 /* MVCCountoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCountoryModel.swift; sourceTree = "<group>"; };
+		B6DFAE0024D452F000071D25 /* MVCCountry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVCCountry.storyboard; sourceTree = "<group>"; };
+		B6DFAE0224D452FC00071D25 /* MVCCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCountryViewController.swift; sourceTree = "<group>"; };
+		B6DFAE0524D4545A00071D25 /* MVCCountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVCCountryTableViewCell.xib; sourceTree = "<group>"; };
+		B6DFAE0724D4547100071D25 /* MVCCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCCountryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 		B620AF6624C32151003A4B1C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B6DFADFF24D452DD00071D25 /* MVCCountryViewController */,
 				B620AF6C24C3218E003A4B1C /* MVCTableViewController */,
 			);
 			path = ViewController;
@@ -177,6 +188,7 @@
 		B620AF6B24C32188003A4B1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B6DFAE0424D4544100071D25 /* MVCCountryTableViewCell */,
 				B620AF6D24C3219C003A4B1C /* MVCTableViewCell */,
 			);
 			path = View;
@@ -204,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B620AF7324C321C8003A4B1C /* MVCUserModel.swift */,
+				B6DFADFD24D452BC00071D25 /* MVCCountoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +227,24 @@
 				B6DC0E3124C32312004243CC /* API.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		B6DFADFF24D452DD00071D25 /* MVCCountryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6DFAE0024D452F000071D25 /* MVCCountry.storyboard */,
+				B6DFAE0224D452FC00071D25 /* MVCCountryViewController.swift */,
+			);
+			path = MVCCountryViewController;
+			sourceTree = "<group>";
+		};
+		B6DFAE0424D4544100071D25 /* MVCCountryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6DFAE0524D4545A00071D25 /* MVCCountryTableViewCell.xib */,
+				B6DFAE0724D4547100071D25 /* MVCCountryTableViewCell.swift */,
+			);
+			path = MVCCountryTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,10 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B620AF6824C32177003A4B1C /* MVCTable.storyboard in Resources */,
+				B6DFAE0624D4545A00071D25 /* MVCCountryTableViewCell.xib in Resources */,
 				B620AF3B24C31342003A4B1C /* LaunchScreen.storyboard in Resources */,
 				B620AF3824C31342003A4B1C /* Assets.xcassets in Resources */,
 				B620AF5F24C318A6003A4B1C /* All.storyboard in Resources */,
 				B620AF6F24C321AE003A4B1C /* MVCTableViewCell.xib in Resources */,
+				B6DFAE0124D452F000071D25 /* MVCCountry.storyboard in Resources */,
 				B620AF3624C3133F003A4B1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,12 +385,15 @@
 			files = (
 				B620AF7124C321B8003A4B1C /* MVCTableViewCell.swift in Sources */,
 				B620AF6224C318B8003A4B1C /* AllViewController.swift in Sources */,
+				B6DFAE0324D452FC00071D25 /* MVCCountryViewController.swift in Sources */,
 				B620AF6424C3199E003A4B1C /* AllTableViewCell.swift in Sources */,
 				B620AF3324C3133F003A4B1C /* ViewController.swift in Sources */,
 				B620AF7424C321C8003A4B1C /* MVCUserModel.swift in Sources */,
 				B620AF2F24C3133F003A4B1C /* AppDelegate.swift in Sources */,
+				B6DFAE0824D4547100071D25 /* MVCCountryTableViewCell.swift in Sources */,
 				B6DC0E3224C32312004243CC /* API.swift in Sources */,
 				B620AF6A24C32184003A4B1C /* MVCTableViewController.swift in Sources */,
+				B6DFADFE24D452BC00071D25 /* MVCCountoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
