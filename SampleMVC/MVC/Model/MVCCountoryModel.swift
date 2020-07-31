@@ -8,8 +8,8 @@
 
 import Foundation
 
-
-enum MVCCountryModel {
+//CaseIteratableを継承すると全パターンの入った配列を生成するパラメータがつく
+enum MVCCountryModel: CaseIterable {
   case america
   case japan
   case china

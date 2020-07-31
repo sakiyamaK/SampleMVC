@@ -10,8 +10,8 @@ import UIKit
 
 final class MVCCountryTableViewController: UIViewController {
 
-  private let CELL_NIB_NAME = "MVCCountryTableViewCell"
-  private let CELL_ID = "MVCTableViewCell"
+  private let CELL_NIB_NAME = String(describing: MVCCountryTableViewCell.self) //"MVCCountryTableViewCell"と同じ
+  private let CELL_ID = String(describing: MVCCountryTableViewCell.self)
 
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
@@ -22,7 +22,9 @@ final class MVCCountryTableViewController: UIViewController {
   }
 
   //予め決まった数のデータソース
-  private var countries: [MVCCountryModel] = [.america, .japan, .china, .france]
+  //MVCCountryModelはCaseIterableに準拠しているので
+  //allCasesパラメータで [.america, .japan, .china, .france] を生成できる
+  private var countries: [MVCCountryModel] =  MVCCountryModel.allCases
 
   override func viewDidLoad() {
     super.viewDidLoad()
