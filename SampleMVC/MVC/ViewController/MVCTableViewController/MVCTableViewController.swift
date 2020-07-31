@@ -10,8 +10,8 @@ import UIKit
 
 final class MVCTableViewController: UIViewController {
 
-  let CELL_NIB_NAME = "MVCTableViewCell"
-  let CELL_ID = "MVCTableViewCell"
+  private let CELL_NIB_NAME = "MVCTableViewCell"
+  private let CELL_ID = "MVCTableViewCell"
 
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
