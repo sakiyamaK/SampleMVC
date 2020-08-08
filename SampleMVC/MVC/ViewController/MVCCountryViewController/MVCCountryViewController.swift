@@ -24,7 +24,7 @@ final class MVCCountryTableViewController: UIViewController {
   //予め決まった数のデータソース
   //MVCCountryModelはCaseIterableに準拠しているので
   //allCasesパラメータで [.america, .japan, .china, .france] を生成できる
-  private var countries: [MVCCountryModel] =  MVCCountryModel.allCases
+  private var countries: [MVCCountryModel] = MVCCountryModel.allCases
 
   override func viewDidLoad() {
     super.viewDidLoad()

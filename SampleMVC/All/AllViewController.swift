@@ -38,7 +38,8 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     ["name": "yoshida", "atName": "@yoshida", "switch": true],
     ["name": "tanaka", "atName": "@tanaka", "switch": false],
     ["name": "suzuki", "atName": "@suzuki", "switch": true],
-    ["name": "yoshida", "atName": "@yoshida", "switch": true]
+    ["name": "yoshida", "atName": "@yoshida", "switch": true],
+    ["name": "suzuki", "atName": "@suzuki", "switch": true],
   ]
 
   //* テーブルのセルの登録がstoryboadでやっている
