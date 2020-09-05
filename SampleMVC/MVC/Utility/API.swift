@@ -20,6 +20,7 @@ final class API {
     //本来はサーバーから取得する
     //ここではサンプルとしてsampeDataを0.4sec後に受け取っている
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+
       guard
         let data = API.sampleData.data(using: .utf8),
         //Codable(Decodable)に準拠したモデルはjson文字列から自動で変わる
