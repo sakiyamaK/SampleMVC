@@ -33,7 +33,6 @@ final class API {
     }
   }
 
-
   //サーバーからこんな感じでデータが返ってくるとする
   private static var sampleData: String {
     let json =

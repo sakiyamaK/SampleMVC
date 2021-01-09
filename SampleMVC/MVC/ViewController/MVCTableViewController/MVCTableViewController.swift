@@ -74,6 +74,7 @@ extension MVCTableViewController: UITableViewDataSource {
       return UITableViewCell()
     }
 
+
     //apiから取得したデータからindexPath番目のインスタンスを取得
     let user = users[indexPath.row]
 
