@@ -9,7 +9,7 @@
 import UIKit
 
 final class MVCTableViewController: UIViewController {
-
+    
     private let CELL_NIB_NAME = "MVCTableViewCell"
     private let CELL_ID = "MVCTableViewCell"
 
@@ -22,7 +22,7 @@ final class MVCTableViewController: UIViewController {
             tableView.isHidden = true
         }
     }
-
+    
     //apiから取得したものを保存する
     private var users: [MVCUserModel] = []
 
@@ -43,6 +43,7 @@ final class MVCTableViewController: UIViewController {
 private extension MVCTableViewController {
     //アラートを出す処理
     func showAlert(user: MVCUserModel) {
+
         let alertVC = UIAlertController(title: "select cell", message: user.alertText, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated: true, completion: nil)

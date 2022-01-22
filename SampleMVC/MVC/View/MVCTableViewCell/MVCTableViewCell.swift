@@ -23,7 +23,7 @@ final class MVCTableViewCell: UITableViewCell {
     }
     
     //セルの更新 モデルを受け取る
-    func configure(user: MVCUserModel) {
+    func configure(user: MVCUserModel) {        
         userNameLabel.text = user.name
         atNameLabel.text = user.atName
         userSwitch.isOn = user.isOn
