@@ -14,7 +14,7 @@ enum MVCCountryModel: CaseIterable {
     case japan
     case china
     case france
-    
+        
     var name: String {
         switch self {
         case .america:

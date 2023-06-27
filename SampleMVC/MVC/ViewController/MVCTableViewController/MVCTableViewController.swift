@@ -9,7 +9,7 @@
 import UIKit
 
 final class MVCTableViewController: UIViewController {
-    
+        
     private let CELL_NIB_NAME = "MVCTableViewCell"
     private let CELL_ID = "MVCTableViewCell"
 
@@ -53,6 +53,7 @@ private extension MVCTableViewController {
 extension MVCTableViewController: UITableViewDelegate {
     //セルをタッチしたときの処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //apiから取得したデータからindexPath番目のインスタンスを取得
         let user = users[indexPath.row]
         //タップしたときのアクションメソッド(今回はアラートを表示
@@ -74,7 +75,7 @@ extension MVCTableViewController: UITableViewDataSource {
             //便宜上 UITableViewCellを返してるが本来ここに来ること自体がエラー
             return UITableViewCell()
         }
-
+        
         //apiから取得したデータからindexPath番目のインスタンスを取得
         let user = users[indexPath.row]
 

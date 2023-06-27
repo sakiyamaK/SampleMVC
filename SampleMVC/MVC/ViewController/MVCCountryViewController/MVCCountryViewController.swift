@@ -10,13 +10,13 @@ import UIKit
 
 final class MVCCountryTableViewController: UIViewController {
 
-  private let CELL_NIB_NAME = String(describing: MVCCountryTableViewCell.self) //"MVCCountryTableViewCell"と同じ
+  private let CELL_NIB_NAME = String(describing: MVCCountryTableViewCell.self)  	 //"MVCCountryTableViewCell"と同じ
   private let CELL_ID = String(describing: MVCCountryTableViewCell.self)
 
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
       //storyboardから読み込んだ時点でセルの登録をすませる
-      let cellNIB = UINib(nibName: CELL_NIB_NAME, bundle: nil)
+        let cellNIB = UINib(nibName: CELL_NIB_NAME, bundle: nil)
       tableView.register(cellNIB, forCellReuseIdentifier: CELL_ID)
     }
   }

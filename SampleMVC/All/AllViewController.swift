@@ -14,7 +14,7 @@ import UIKit
 //* この中のどれがUITableViewDelegateのメソッドなのか
 //* この中のどれがUITableViewDataSourceのメソッドなのか分からない
 class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+        
     //* テーブルのデータソースがControllerに記述されている
     //* データがただの配列
     let users = [
@@ -41,7 +41,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         ["name": "yoshida", "atName": "@yoshida", "switch": true],
         ["name": "suzuki", "atName": "@suzuki", "switch": true],
     ]
-    
+        
     //* テーブルのセルの登録がstoryboadでやっている
     //* セルの種類の追加や変更に対処できない
     
@@ -58,17 +58,20 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //* セルをタップしたときのアクションが複雑になると切り替えが難しい
         //* このあたりの記述自体をメソッド化しておくべき
         
-        let alertVC = UIAlertController(title: "select cell", message: "\(user["name"] as! String) \n \(user["atName"] as! String)", preferredStyle: .alert)
+        let alertVC = UIAlertController(
+            title: "select cell",
+            message: "\(user["name"] as! String) \n \(user["atName"] as! String)",
+            preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
-        
+                    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                
         //* テーブルセルのIDが文字列で記述されてる
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell") as! AllTableViewCell
         

@@ -13,7 +13,7 @@ final class MVCTableViewCell: UITableViewCell {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var atNameLabel: UILabel!
     @IBOutlet private weak var userSwitch: UISwitch!
-    
+
     //セルの再利用時に呼ばれる初期化メソッド
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -23,9 +23,9 @@ final class MVCTableViewCell: UITableViewCell {
     }
     
     //セルの更新 モデルを受け取る
-    func configure(user: MVCUserModel) {        
+    func configure(user: MVCUserModel) {
         userNameLabel.text = user.name
         atNameLabel.text = user.atName
-        userSwitch.isOn = user.isOn
+        userSwitch.isOn = user.isOn        
     }
 }
