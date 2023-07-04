@@ -57,7 +57,6 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //* セルをタップしたときのアクションが複雑になると切り替えが難しい
         //* このあたりの記述自体をメソッド化しておくべき
-        
         let alertVC = UIAlertController(
             title: "select cell",
             message: "\(user["name"] as! String) \n \(user["atName"] as! String)",
@@ -65,11 +64,11 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
-                    
+                        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-        
+            
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
         //* テーブルセルのIDが文字列で記述されてる

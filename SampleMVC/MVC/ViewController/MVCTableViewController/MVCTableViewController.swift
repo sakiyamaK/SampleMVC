@@ -9,7 +9,7 @@
 import UIKit
 
 final class MVCTableViewController: UIViewController {
-        
+    
     private let CELL_NIB_NAME = "MVCTableViewCell"
     private let CELL_ID = "MVCTableViewCell"
 
