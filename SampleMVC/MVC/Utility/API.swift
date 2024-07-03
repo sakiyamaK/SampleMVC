@@ -10,32 +10,36 @@
 import Foundation
 
 final class API {
-  //シングルトンパターンの書き方
-  static let shared = API()
-  private init() { }
-
-  //userデータを取得するAPI
-  func getUsers(completion: (([MVCUserModel]) -> Void)? = nil) {
-    //仮想API通信
-    //本来はサーバーから取得する
-    //ここではサンプルとしてsampeDataを0.4sec後に受け取っている
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-
-      guard
-        let data = API.sampleData.data(using: .utf8),
-        //Codable(Decodable)に準拠したモデルはjson文字列から自動で変わる
-        let users = try? JSONDecoder().decode([MVCUserModel].self, from: data)
-        else {
-          completion?([])
-          return
-      }
-      completion?(users)
+    //シングルトンパターンの書き方
+    static let shared = API()
+    private init() { }
+    
+    //userデータを取得するAPI
+    func getUsers() async -> [MVCUserModel] {
+        
+        do {
+            // 仮想API通信
+            // 本来はサーバーから取得する
+            // ここではサンプルとしてsampeDataを0.4sec後に受け取っている
+            try await Task.sleep(for: .milliseconds(400))
+            
+            guard
+                let data: Data = API.sampleData.data(using: .utf8),
+                let users = try? JSONDecoder().decode([MVCUserModel].self, from: data)
+            else {
+                return []
+            }
+            
+            return users
+        } catch {
+            // エラーが発生した場合は空の配列を返す
+            return []
+        }
     }
-  }
-
-  //サーバーからこんな感じでデータが返ってくるとする
-  private static var sampleData: String {
-    let json =
+    
+    //サーバーからこんな感じでデータが返ってくるとする
+    private static var sampleData: String {
+        let json =
 """
 [
     {
@@ -145,6 +149,6 @@ final class API {
     }
 ]
 """
-    return json
-  }
+        return json
+    }
 }

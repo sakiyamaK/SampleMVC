@@ -9,7 +9,7 @@
 import UIKit
 
 final class MVCTableViewController: UIViewController {
-    
+        
     private let CELL_NIB_NAME = "MVCTableViewCell"
     private let CELL_ID = "MVCTableViewCell"
 
@@ -30,12 +30,13 @@ final class MVCTableViewController: UIViewController {
         super.viewDidLoad()
 
         //apiからユーザデータを取得
-        API.shared.getUsers(completion: {[weak self] users in
+        Task { @MainActor in
+            let users = await API.shared.getUsers()
             //取得したらテーブルをリロード
-            self?.users = users
-            self?.tableView.reloadData()
-            self?.tableView.isHidden = false
-        })
+            self.users = users
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+        }
     }
 }
 
@@ -51,6 +52,7 @@ private extension MVCTableViewController {
 }
 
 extension MVCTableViewController: UITableViewDelegate {
+    
     //セルをタッチしたときの処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

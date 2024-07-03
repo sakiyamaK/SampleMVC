@@ -41,12 +41,13 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         ["name": "yoshida", "atName": "@yoshida", "switch": true],
         ["name": "suzuki", "atName": "@suzuki", "switch": true],
     ]
-        
+
     //* テーブルのセルの登録がstoryboadでやっている
     //* セルの種類の追加や変更に対処できない
     
     //テーブルをタップしたときの処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //indexPathからデータを取得
         let user = users[indexPath.row]
         
@@ -57,6 +58,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //* セルをタップしたときのアクションが複雑になると切り替えが難しい
         //* このあたりの記述自体をメソッド化しておくべき
+                        
         let alertVC = UIAlertController(
             title: "select cell",
             message: "\(user["name"] as! String) \n \(user["atName"] as! String)",
@@ -64,11 +66,11 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
-                        
+            
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-            
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
         //* テーブルセルのIDが文字列で記述されてる
@@ -82,7 +84,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.userNameLabel.text = user["name"] as? String
         cell.atNameLabel.text = user["atName"] as? String
         cell.userSwitch.isOn = user["switch"] as! Bool
-                
+                                
         return cell
     }
 }

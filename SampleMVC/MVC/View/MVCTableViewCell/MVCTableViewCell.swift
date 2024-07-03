@@ -26,6 +26,6 @@ final class MVCTableViewCell: UITableViewCell {
     func configure(user: MVCUserModel) {
         userNameLabel.text = user.name
         atNameLabel.text = user.atName
-        userSwitch.isOn = user.isOn        
+        userSwitch.isOn = user.isOn
     }
 }

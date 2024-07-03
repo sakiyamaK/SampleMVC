@@ -9,6 +9,7 @@
 import Foundation
 
 //CaseIteratableを継承すると全パターンの入った配列を生成するパラメータがつく
+
 enum MVCCountryModel: CaseIterable {
     case america
     case japan
@@ -18,39 +19,39 @@ enum MVCCountryModel: CaseIterable {
     var name: String {
         switch self {
         case .america:
-            return "アメリカ"
+            "アメリカ"
         case .japan:
-            return "日本"
+            "日本"
         case .china:
-            return "中国"
+            "中国"
         case .france:
-            return "フランス"
+            "フランス"
         }
     }
     
     var imageName: String {
         switch self {
         case .america:
-            return "america"
+            "america"
         case .japan:
-            return "japan"
+            "japan"
         case .china:
-            return "china"
+            "china"
         case .france:
-            return "france"
+            "france"
         }
     }
     
     var moneyRatio: Double {
         switch self {
         case .america:
-            return 0.01
+            0.01
         case .japan:
-            return 1
+            1
         case .china:
-            return 0.5
+            0.5
         case .france:
-            return 0.2
+            0.2
         }
     }
 }
